@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { ethers } from "ethers";
-import GAIA_ABI from "../GAIA_ABI.json";
+import GAIA_ABI from "./GAIA_ABI.json";
 
 const GAIATransfer = () => {
   const [to, setTo] = useState("");
