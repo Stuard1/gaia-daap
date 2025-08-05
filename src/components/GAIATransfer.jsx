@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { ethers } from "ethers";
 import GAIA_ABI from "./GAIA_ABI.json";
 
-const GAIA_ADDRESS = "0x5FeaeBfB4439F3516c74939A9D04e95AFE82C4ae"; // Dirección del contrato en Chiado
+const GAIA_ADDRESS = "0x9469260538446129534FC0A0a36251C96Ebd2682"; // Dirección en Gnosis Mainnet
 
 export default function GAIATransfer() {
   const [to, setTo] = useState("");
@@ -30,7 +30,7 @@ export default function GAIATransfer() {
 
       setStatus("✅ Transferencia exitosa");
     } catch (error) {
-      console.error(error);
+      console.error("🚨 Error al transferir GAIA:", error);
       setStatus("❌ Error en la transferencia");
     }
   };
