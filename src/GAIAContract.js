@@ -1,23 +1,9 @@
 import { ethers } from "ethers";
+import GAIA_ABI from "./GAIA_ABI.json"; // Asegúrate de que este path esté correcto
 
-// Dirección del contrato GAIA desplegado en Chiado
- const GAIA_CONTRACT_ADDRESS = "0x9469260538446129534FC0A0a36251C96Ebd2682";
-// ABI del contrato GAIA (resumido, con las funciones más importantes)
-const GAIA_ABI = [
-  // Nombre del token
-  "function name() view returns (string)",
-  // Símbolo del token
-  "function symbol() view returns (string)",
-  // Decimales
-  "function decimals() view returns (uint8)",
-  // Suministro total
-  "function totalSupply() view returns (uint256)",
-  // Balance de una cuenta
-  "function balanceOf(address) view returns (uint)",
-  // Transferencia de tokens
-  "function transfer(address to, uint amount) returns (bool)",
-];
+// Dirección del contrato GAIA en Gnosis Chain Mainnet
+const GAIA_CONTRACT_ADDRESS = "0x9469260538446129534FC0A0a36251C96Ebd2682";
 
-export function getGAIAContract(providerOrSigner) {
-  return new ethers.Contract(GAIA_ADDRESS, GAIA_ABI, providerOrSigner);
+export function getGAIAContract(provider) {
+  return new ethers.Contract(GAIA_CONTRACT_ADDRESS, GAIA_ABI, provider);
 }
