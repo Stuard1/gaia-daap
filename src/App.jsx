@@ -1,15 +1,10 @@
-import { useEffect, useState } from "react";
-import { ethers } from "ethers";
-import GAIA_ABI from "./components/GAIA_ABI.json";
-import GAIATransfer from "./components/GAIATransfer";
+import React, { useState, useEffect } from "react";
 import GAIABalance from "./components/GAIABalance";
-
-const GAIA_CONTRACT = "0x5FeaeBfB4439F3516c74939A9D04e95AFE82C4ae";
+import GAIATransfer from "./components/GAIATransfer";
 
 function App() {
   const [account, setAccount] = useState(null);
 
-  // 👉 Conexión automática a MetaMask
   useEffect(() => {
     const connect = async () => {
       if (window.ethereum) {
@@ -29,7 +24,7 @@ function App() {
       <h1>🌱 Aplicación descentralizada GAIA</h1>
       {account ? (
         <>
-          <GAIABalance account={account} abi={GAIA_ABI} contractAddress={GAIA_CONTRACT} />
+          <GAIABalance account={account} />
           <GAIATransfer />
         </>
       ) : (

@@ -1,8 +1,7 @@
 import { ethers } from "ethers";
 
 // Dirección del contrato GAIA desplegado en Chiado
-const GAIA_ADDRESS = "0x5FeaeBfB4439F3516c74939A9D04e95AFE82C4ae";
-
+ const GAIA_CONTRACT_ADDRESS = "0x9469260538446129534FC0A0a36251C96Ebd2682";
 // ABI del contrato GAIA (resumido, con las funciones más importantes)
 const GAIA_ABI = [
   // Nombre del token
